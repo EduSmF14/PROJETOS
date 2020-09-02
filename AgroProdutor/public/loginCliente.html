@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- TITLE -->
+    <title>LOGIN</title>
+    <!-- ENCODING -->
+    <meta charset="utf-8" />
+    <!-- DOCUMENT AREA -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- DESCRIPTION -->
+    <meta name="description" content="Aplicação para conectar os produtores de produtos Orgânicos e os clientes">
+    <!-- KEYWORDS -->
+    <meta name="keywords" content="AgroProdutor, Produtores, Clientes, Produtos Orgânicos">
+    <!-- DEFAULT DOCUMENT -->
+    <meta name="robots" content="index, follow">
+    <!-- AUTHOR -->
+    <meta name="author" content="Eduardo Santos">
+    <!-- STYLES APP -->
+    <!-- ROBOTO FONT -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <!-- Material Design icon font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- Material Design Lite -->
+    <link rel="stylesheet" type="text/css" media="screen" href="mdl/material.min.css">
+    <!-- STYLE GENERALIZED -->
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/app.css">
+    <!-- FAVICON -->
+    <link rel="apple-touch-icon" sizes="57x57" href="fav/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="fav/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="fav/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="fav/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="fav/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="fav/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="fav/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="fav/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="fav/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="fav/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="fav/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="fav/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#4caf50">
+    <meta name="msapplication-TileImage" content="fav/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <!-- MANIFEST -->
+    <link rel="manifest" href="manifest.json">
+</head>
+
+<body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <!-- TOOLBAR -->
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row header_login">
+                <!-- TITLE -->
+                <span class="mdl-layout__title">AgroProdutor</span>
+                <div class="mdl-layout-spacer"></div>
+                <!-- HELP BUTTON => app_help -->
+                <button class="mdl-button mdl-js-button mdl-button--icon">
+                    <i class="material-icons md-light" id="app_help_cad_cliente">help</i>
+                </button>
+            </div>
+        </header>
+        <!-- MAIN CONTENT -->
+        <main class="mdl-layout__content">
+            <div class="page-content">
+                <!-- LOGIN CARD -->
+                <div id="app_content" class="app-card-wide mdl-card mdl-shadow--4dp">
+                    <!-- LOGIN TITLE -->
+                    <div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text mdl-h2__title">Login Cliente</h2>
+                    </div>
+                    <!-- LOGIN ACTIONS -->
+                    <div class="mdl-card__actions mdl-div_card">
+                        <!-- USER NAME INPUT => nameUser -->
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label input_register">
+                            <input class="mdl-textfield__input" type="text" id="nameUser" maxlength="15">
+                            <label class="mdl-textfield__label" for="nameUser">Nome de usuário</label>
+                        </div>
+                        <!-- USER PASSWORD INPUT => senhaCliente -->
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label input_register">
+                            <input class="mdl-textfield__input" type="password" id="senhaCliente" maxlength="8">
+                            <label class="mdl-textfield__label" for="senhaCliente">Senha</label>
+                        </div>
+                        <!-- SHOW PASSWORD SWITCH => app_showPassword_cliente -->
+                        <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect mdl-switch_card" for="app_showPassword_cliente">
+                            <input type="checkbox" id="app_showPassword_cliente" class="mdl-switch__input">
+                            <span class="mdl-switch__label">Mostrar senha</span>
+                        </label>
+                        <!-- REMIND ME SWITCH => app_remindMe_cliente -->
+                        <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect mdl-switch_card" for="app_remindMe_cliente">
+                            <input type="checkbox" id="app_remindMe_cliente" class="mdl-switch__input">
+                            <span class="mdl-switch__label">Lembrar-me</span>
+                        </label>
+                        <!-- LOGIN BUTTON => btn_entrar_menu_cliente -->
+                        <button id="btn_entrar_menu_cliente" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent app_button">
+                            Entrar
+                        </button>
+                        <!-- REGISTER BUTTON => btn_cadastrar_cliente -->
+                        <button id="btn_cadastrar_cliente" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent app_button">
+                            Cadastrar
+                        </button>
+                    </div>
+                    <!-- LOGIN ACTIONS BORDER -->
+                    <div class="mdl-card__actions mdl-card--border">
+                        <!-- FORGOT PASSWORD LINK => btn_esqueci_senha_cliente -->
+                        <a id="btn_esqueci_senha_cliente" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                            Recuperar cadastro
+                        </a>
+                        <!-- CONNECT PRODUTOR LINK => btn_produtor -->
+                        <a id="btn_produtor" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                            CONECTAR COMO PRODUTOR
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- DIV == LOADER -->
+    <div id="loader" class="tools_flex loader_flex">
+        <div id="loader_background" class="tools_flex loader_flex">
+            <div id="loader_animation" class="tools_flex loader_flex">
+                <svg viewBox="0 0 32 32" width="35" height="35">
+                    <circle id="spinner" cx="16" cy="16" r="14" fill="none"></circle>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <!-- SNACKBAR -->
+    <div id="app_snackbar" class="mdl-js-snackbar mdl-snackbar">
+        <div class="mdl-snackbar__text"></div>
+        <button class="mdl-snackbar__action"></button>
+    </div>
+
+    <!-- DIALOG -->
+    <div id="dialog" class="flex_box dialog_background">
+        <div class="flex_box box_shadow">
+            <h1 class="unselected">Title</h1>
+            <div class="flex_box">
+                <p class="unselected">Message</p>
+            </div>
+            <div class="flex_box"></div>
+        </div>
+    </div>
+
+
+
+    <!-- SCRIPT -->
+    <!-- JQUERY JS -->
+    <script src="jquery/jquery-3.3.1.js"></script>
+    <!-- Material Design Lite -->
+    <script src="mdl/material.js"></script>
+    <!-- FUNÇÕES GERAIS DA TELA -->
+    <script src="js/Login.js"></script>
+    <script src="js/Index.js"></script>
+    <script src="js/App.js"></script>
+
+</body>
+
+</html>

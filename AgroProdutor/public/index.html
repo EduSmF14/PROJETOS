@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- TITLE -->
+    <title>APRESENTAÇÃO</title>
+    <!-- ENCODING -->
+    <meta charset="utf-8" />
+    <!-- DOCUMENT AREA -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- DESCRIPTION -->
+    <meta name="description" content="Aplicação para conectar os produtores de produtos Orgânicos e os clientes">
+    <!-- KEYWORDS -->
+    <meta name="keywords" content="AgroProdutor, Produtores, Clientes, Produtos Orgânicos">
+    <!-- DEFAULT DOCUMENT -->
+    <meta name="robots" content="index, follow">
+    <!-- AUTHOR -->
+    <meta name="author" content="Eduardo Santos">
+    <!-- STYLES APP -->
+    <!-- ROBOTO FONT -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <!-- Material Design icon font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- Material Design Lite -->
+    <link rel="stylesheet" type="text/css" media="screen" href="mdl/material.min.css">
+    <!-- STYLE GENERALIZED -->
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/app.css">
+    <!-- FAVICON -->
+    <link rel="apple-touch-icon" sizes="57x57" href="fav/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="fav/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="fav/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="fav/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="fav/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="fav/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="fav/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="fav/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="fav/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="fav/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="fav/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="fav/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#4caf50">
+    <meta name="msapplication-TileImage" content="fav/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <!-- MANIFEST -->
+    <link rel="manifest" href="manifest.json">
+</head>
+
+<body>
+
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <!-- TOOLBAR -->
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row header_login">
+                <!-- TITLE -->
+                <span class="mdl-layout__title">AgroProdutor</span>
+                <div class="mdl-layout-spacer"></div>
+                <!-- HELP BUTTON => app_help -->
+                <button class="mdl-button mdl-js-button mdl-button--icon">
+                    <i class="material-icons md-light" id="app_help_cad">help</i>
+                </button>
+            </div>
+        </header>
+        <!-- MAIN CONTENT -->
+        <main class="mdl-layout__content">
+            <div class="page-content">
+                <!-- <img id="img_logo" class="img" src="images/broto.png" alt="broto" title="broto"> -->
+                <!-- CARD -->
+                <div id="app_content" class="app-card-wide mdl-card mdl-shadow--4dp">
+                    <!-- TITLE -->
+                    <div class="mdl-card__title mdl-card_menu_3 mdl-card--border">
+                        <h2 class="mdl-card__title-text mdl-h2__title">Bem Vindo,
+                            <br>ao AgroProdutor!</h2>
+                        </h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        O primeiro app que irá te ajudar a encontrar os melhores produtos orgânico próximos a você.
+                    </div>
+                    <!-- LOGIN ACTIONS -->
+                    <div class="mdl-card__actions mdl-div_card">
+                        <!-- BUTTON => btn_entrar_menu_cliente -->
+                        <button id="btn_cliente"
+                            class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent app_button btn_cliente">
+                            CONECTAR COMO CLIENTE
+                        </button>
+                        <!-- REGISTER BUTTON => btn_cadastrar_cliente -->
+                        <button id="btn_produtor"
+                            class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent app_button btn_produtor">
+                            CONECTAR COMO PRODUTOR
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- DIALOG -->
+    <div id="dialog" class="flex_box dialog_background">
+        <div class="flex_box box_shadow">
+            <h1 class="unselected">Title</h1>
+            <div class="flex_box">
+                <p class="unselected">Message</p>
+            </div>
+            <div class="flex_box"></div>
+        </div>
+    </div>
+
+
+    <!-- SCRIPT -->
+    <!-- JQUERY JS -->
+    <script src="jquery/jquery-3.3.1.js"></script>
+    <!-- Material Design Lite -->
+    <script src="mdl/material.js"></script>
+    <!-- FUNÇÕES GERAIS DA TELA -->
+    <script src="js/App.js"></script>
+    <script src="js/Index.js"></script>
+
+</body>
+
+</html>

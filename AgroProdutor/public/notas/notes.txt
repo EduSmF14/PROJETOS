@@ -1,0 +1,228 @@
+<main class="main_top60 content_flex">
+    <!-- SECTION == LOGIN -->
+    <section id="pre_login" class="content_flex">
+        <div class="flex_box">
+            <img id="img_pre_login" src="img/broto.png" alt="logo" title="logo">
+            <h1>AgroProdutor</h1>
+
+
+            <button id="btn_entrar">ENTRAR</button>
+            <button id="btn_cadastrar">CADASTRAR</button>
+        </div>
+    </section>
+</main>
+
+CREATE TABLE tbCliente(
+	idCliente int identity primary key NOT NULL, -- Int32
+	nomeCliente nvarchar(80) NOT NULL, -- string
+	emailCliente nvarchar(40) NOT NULL, -- string
+    dataNascimento nvarchar(40) NOT NULL, -- string
+	senha nvarchar(8) NOT NULL, -- string
+	enderecoDoCliente nvarchar(150) NOT NULL, -- string
+	lat float NOT NULL, -- double
+	lng float NOT NULL, -- double
+	telefone nvarchar(14) NOT NULL, -- string  (12) 99999-9999
+	dataCadastro smalldatetime NOT NULL, -- DateTime / Hora do servidor
+);
+
+// CHECK LOCALSTORAGE auth
+if (localStorage.hasOwnProperty('authCliente')) {
+    let str_auth = localStorage.getItem('authCliente'),
+        obj_auth = JSON.parse(str_auth);
+    // NODE.JS API isAuthenticatedCliente
+    fetch('/authenticated/cliente', {
+        method: 'GET',
+        headers: {
+            'Authorization': `Bearer ${obj_auth.token}`
+        }
+    })
+        .then(result => { return result.json() })
+        .then(data => {
+            if (data.authenticated) {
+                window.location = 'telaMenuCliente.html';
+            }
+        })
+        .catch(err => {
+            console.error(err.message);
+        });
+}
+if (localStorage.hasOwnProperty('authProdutor')) {
+    let str_auth = localStorage.getItem('authProdutor'),
+        obj_auth = JSON.parse(str_auth);
+    // NODE.JS API isAuthenticatedProdutor
+    fetch('/authenticated/produtor', {
+        method: 'GET',
+        headers: {
+            'Authorization': `Bearer ${obj_auth.token}`
+        }
+    })
+        .then(result => { return result.json() })
+        .then(data => {
+            if (data.authenticated) {
+                window.location = 'telaMenuProdutor.html';
+            }
+        })
+        .catch(err => {
+            console.error(err.message);
+        });
+}
+
+<section class="mdl-layout__tab-panel" id="fixed-tab-2">
+    <div class="page-content">
+        <div class="app-card-wide mdl-card mdl-shadow--4dp">
+            <!-- REGISTER TITLE -->
+            <div class="mdl-card__title">
+                <h2 class="mdl-card__title-text mdl-h2__title">Selecione seus Produtos</h2>
+            </div>
+            <!-- REGISTER ACTIONS -->
+            <div class="mdl-card__actions mdl-div_card">
+
+                <ul class="demo-list-control mdl-list ul_card">
+                    <li class="mdl-list__item">
+                        <span class="mdl-list__item-primary-content">Banana</span>
+                        <span class="mdl-list__item-secondary-action">
+                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="list-checkbox-1">
+                                <input type="checkbox" id="list-checkbox-1" class="mdl-checkbox__input" checked />
+                            </label>
+                        </span>
+                    </li>
+                    <li class="mdl-list__item">
+                        <span class="mdl-list__item-primary-content">Banana</span>
+                        <span class="mdl-list__item-secondary-action">
+                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="list-checkbox-2">
+                                <input type="checkbox" id="list-checkbox-2" class="mdl-checkbox__input" checked />
+                            </label>
+                        </span>
+                    </li>
+                    <li class="mdl-list__item">
+                        <span class="mdl-list__item-primary-content">Banana</span>
+                        <span class="mdl-list__item-secondary-action">
+                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="list-checkbox-3">
+                                <input type="checkbox" id="list-checkbox-3" class="mdl-checkbox__input" checked />
+                            </label>
+                        </span>
+                    </li>
+                    <li class="mdl-list__item">
+                        <span class="mdl-list__item-primary-content">Banana</span>
+                        <span class="mdl-list__item-secondary-action">
+                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="list-checkbox-4">
+                                <input type="checkbox" id="list-checkbox-4" class="mdl-checkbox__input" checked />
+                            </label>
+                        </span>
+                    </li>
+                    <li class="mdl-list__item">
+                        <span class="mdl-list__item-primary-content">Banana</span>
+                        <span class="mdl-list__item-secondary-action">
+                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="list-checkbox-5">
+                                <input type="checkbox" id="list-checkbox-5" class="mdl-checkbox__input" checked />
+                            </label>
+                        </span>
+                    </li>
+                    <li class="mdl-list__item">
+                        <span class="mdl-list__item-primary-content">Banana</span>
+                        <span class="mdl-list__item-secondary-action">
+                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="list-checkbox-6">
+                                <input type="checkbox" id="list-checkbox-6" class="mdl-checkbox__input" checked />
+                            </label>
+                        </span>
+                    </li>
+                </ul>
+                <!-- REGISTER BUTTON => app_register -->
+                <button id="btn_cadastrar_produtos" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent app_button">
+                    CONFIRMAR
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<!-- Simple header with fixed tabs. -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-tabs">
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row header">
+                <!-- RETURN BUTTON => app_return -->
+                <button class="mdl-button mdl-js-button mdl-button--icon buttons_layout">
+                    <i id="btn_voltar_2" class="material-icons md-light" id="btn_voltar_1">arrow_back</i>
+                </button>
+                <!-- TITLE -->
+                <span class="mdl-layout__title">AgroProdutor</span>
+                <div class="mdl-layout-spacer"></div>
+                <!-- HELP BUTTON => app_help -->
+                <button class="mdl-button mdl-js-button mdl-button--icon">
+                    <i class="material-icons md-light" id="app_help_cad">help</i>
+                </button>
+            </div>
+        </header>
+        <main class="mdl-layout__content">
+            <section class="mdl-layout__tab-panel is-active" id="fixed-tab-1">
+                <div class="page-content">
+                    <!-- REGISTER CARD -->
+                    <div class="app-card-wide mdl-card mdl-shadow--4dp">
+                        <!-- REGISTER TITLE -->
+                        <div class="mdl-card__title">
+                            <h2 class="mdl-card__title-text mdl-h2__title">Cadastro Produtor</h2>
+                        </div>
+                        <!-- REGISTER ACTIONS -->
+                        <div class="mdl-card__actions mdl-div_card">
+                            <!-- REGISTER BUTTON => app_register -->
+                            <button id="btn_cadastrar_produtor" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent app_button">
+                                Cadastrar
+                            </button>
+                        </div>
+                        <!-- REGISTER ACTIONS BORDER -->
+                        <div id="mdl-card__actions_cadastro" class="mdl-card__actions mdl-card--border">
+                            <div>
+                                <a id="btn_endereco" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">OBTER ENDEREÇO POR CEP</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="mdl-layout__tab-panel" id="fixed-tab-2">
+                <div class="page-content">
+                </div>
+            </section>
+            <section class="mdl-layout__tab-panel" id="fixed-tab-3">
+                <div class="page-content">
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- SNACKBAR -->
+    <div id="app_snackbar" class="mdl-js-snackbar mdl-snackbar">
+        <div class="mdl-snackbar__text"></div>
+        <button class="mdl-snackbar__action"></button>
+    </div>
+
+    <!-- DIALOG -->
+    <div id="dialog" class="flex_box dialog_background">
+        <div class="flex_box box_shadow">
+            <h1 class="unselected">Title</h1>
+            <div class="flex_box">
+                <p class="unselected">Message</p>
+            </div>
+            <div class="flex_box"></div>
+        </div>
+    </div>
+
+    <header id="top_toolbar"></header>
+    <div id="left_menu"></div>
+
+    <!-- MAIN == CONTENT -->
+    <main class="main_top120">
+        <!-- SECTION MAP -->
+        <section id="map">
+        </section>
+        <div id="popup" class="ol-popup">
+            <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+            <div id="popup-content"></div>
+        </div>
+    </main>
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+CRIAR A EXTENSÃO ESPACIAL POSTGIS
+CREATE EXTENSION postgis;

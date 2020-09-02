@@ -1,0 +1,206 @@
+﻿-- Nome do Banco
+agroProdutor
+
+-- Criar a tabela Produtor
+CREATE TABLE tbProdutor (
+	idProdutor SERIAL primary key NOT NULL, -- Int32
+	nomeUserProdutor varchar(20) NOT NULL, -- string
+	nomeProdutor varchar(80) NOT NULL, -- string
+	emailProdutor varchar(40) NOT NULL, -- string
+	dataNascimento varchar(11) NOT NULL, -- string
+	tipoDeProdutor varchar(30) NOT NULL, -- string
+	senha varchar(50) NOT NULL, -- string
+	enderecoDoProdutor varchar(150) NOT NULL, -- string
+	lat FLOAT NOT NULL, -- double
+	lng FLOAT NOT NULL, -- double
+	telefone varchar(16) NOT NULL, -- string
+	SituacaoProdutor varchar(1) NOT NULL, -- string
+	dataCadastro TIMESTAMP NOT NULL -- DateTime / Hora do servidor
+);
+
+
+
+--Alimentar a tabela Produtor
+insert into tbProdutor(nomeUserProdutor,nomeProdutor, emailProdutor, dataNascimento, tipoDeProdutor, senha, enderecoDoProdutor, lat, lng, telefone, SituacaoProdutor, dataCadastro) values
+('TestU1','Test User 1','eduardosmf_1998@hotmail.com','1982-05-14','Produtor Orgânico','202cb962ac59075b964b07152d234b70','Rua Expedicionário Américo Pereira da Silva, Jacareí, SP',-23.2807788,-45.9636673,'(12) 99619-0998','A',now()),
+('TestU2','Test User 2','eduardosmf1998@gmail.com','1979-05-14','Produtor Agroecológico','202cb962ac59075b964b07152d234b70','Rua Lourenço Nogueira, Jacareí, SP',-23.3190763,-45.9399855,'(12) 99619-0998','A',now()),
+('TestU3','Test User 3','eduardo.miguel01@fatec.sp.gov.com','1970-06-20','Produtor Comum','202cb962ac59075b964b07152d234b70','Rua dos Ferroviários, Jacareí, SP',-23.297447,-45.965548,'(12) 99619-0998','A',now());
+
+Select * From tbProdutor
+
+
+
+
+-- Criar a tabela Cliente
+CREATE TABLE tbCliente(
+	idCliente serial primary key NOT NULL, -- Int32
+	nomeUser varchar(20) NOT NULL, -- string
+	nomeCliente varchar(80) NOT NULL, -- string
+	emailCliente varchar(40) NOT NULL, -- string
+    dataNascimento varchar(11) NOT NULL, -- string
+	senha varchar(50) NOT NULL, -- string
+	enderecoDoCliente varchar(150) NOT NULL, -- string
+	latCliente float NOT NULL, -- double
+	lngCliente float NOT NULL, -- double
+	telefoneCliente varchar(16) NOT NULL, -- string  (12) 99999-9999
+	dataCadastro TIMESTAMP NOT NULL -- DateTime / Hora do servidor
+);
+
+--Alimentar a tabela Produtor
+insert into tbCliente(nomeUser, nomeCliente, emailCliente, dataNascimento, senha, enderecoDoCliente, latCliente, lngCliente, telefoneCliente, dataCadastro) values
+('TestU1','Test User 1','eduardosmf_1998@hotmail.com','1982-05-14','202cb962ac59075b964b07152d234b70','Rua Expedicionário Américo Pereira da Silva, Jacareí, SP',-23.2807788,-45.9636673,'(12) 99619-0998',now()),
+('TestU2','Test User 2','eduardosmf1998@gmail.com','1979-05-14','202cb962ac59075b964b07152d234b70','Rua Lourenço Nogueira, Jacareí, SP',-23.3190763,-45.9399855,'(12) 99619-0998',now()),
+('TestU3','Test User 3','eduardo.miguel01@fatec.sp.gov.com','1970-06-20','202cb962ac59075b964b07152d234b70','Rua dos Ferroviários, Jacareí, SP',-23.297447,-45.965548,'(12) 99619-0998',now());
+
+Select * From tbCliente
+
+-- Criar a tabela Produto
+CREATE TABLE tbProduto(
+	idProduto serial primary key NOT NULL, -- Int32
+	nomeProduto varchar(50) NOT NULL, -- string
+	tipo_de_produto varchar(50) NOT NULL -- string
+);
+
+--Alimentar a tabela Produtos
+insert into tbProduto (nomeProduto, tipo_de_produto) values
+('Abacate', 'Fruta'),
+('Abacaxi', 'Fruta'),
+('Açaí', 'Fruta'),
+('Ameixa', 'Fruta'),
+('Banana', 'Fruta'),
+('Blueberries', 'Fruta'),
+('Caju', 'Fruta'),
+('Cereja', 'Fruta'),
+('Figo', 'Fruta'),
+('Framboesa', 'Fruta'),
+('Goiaba', 'Fruta'),
+('Laranja', 'Fruta'),
+('Limão', 'Fruta'),
+('Maçã', 'Fruta'),
+('Mamão', 'Fruta'),
+('Manga', 'Fruta'),
+('Maracujá', 'Fruta'),
+('Morango', 'Fruta'),
+('Nectarina', 'Fruta'),
+('Pêra', 'Fruta'),
+('Pêssego', 'Fruta'),
+('Tangerina', 'Fruta'),
+('Uva', 'Fruta'),
+('Aipo', 'Legume'),
+('Batata', 'Legume'),
+('Beterraba', 'Legume'),
+('Cenoura', 'Legume'),
+('Chuchu', 'Legume'),
+('Mandioca', 'Legume'),
+('Pepino', 'Legume'),
+('Pimenta', 'Legume'),
+('Pimentão', 'Legume'),
+('Tomate', 'Legume'),
+('Tomate Cereja', 'Legume'),
+('Acelga', 'Verdura'),
+('Agrião', 'Verdura'),
+('Alface', 'Verdura'),
+('Almeirão', 'Verdura'),
+('Brócolis', 'Verdura'),
+('Couve', 'Verdura'),
+('Escarola', 'Verdura'),
+('Espinafre', 'Verdura'),
+('Repolho', 'Verdura'),
+('Rúcula', 'Verdura'),
+('Camomila', 'Erva'),
+('Capim Limão', 'Erva'),
+('Cheiro Verde', 'Erva'),
+('Coentro', 'Erva'),
+('Couve-flor', 'Erva'),
+('Erva-doce', 'Erva'),
+('Hortelã', 'Erva'),
+('Manjericão', 'Erva'),
+('Salsa', 'Erva'),
+('Arroz', 'Grãos'),
+('Ervilha', 'Grãos'),
+('Feijão', 'Grãos'),
+('Milho', 'Grãos');
+
+select * from tbProduto
+
+-- Criar a tabela Produto por Produtor
+CREATE TABLE tbProdutoPorProdutor(
+    idProdutoPorProdutor serial primary key NOT NULL, -- Int32
+	idProdutor int NOT NULL, -- Int32
+	idProduto int NOT NULL, -- Int32
+	disponibilidade varchar(12) NOT NULL, -- string
+	FOREIGN KEY (idProdutor) REFERENCES tbProdutor (idProdutor) ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (idProduto) REFERENCES tbProduto (idProduto)  ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+--Alimentar a tabela tbProdutoPorProdutor
+insert into tbProdutoPorProdutor (idProdutor, idProduto, disponibilidade) values
+(1,12,'DISPONIVEL'),
+(1,5,'DISPONIVEL'),
+(1,10,'INDISPONIVEL'),
+(1,17,'DISPONIVEL'),
+(2,3,'INDISPONIVEL'),
+(2,5,'DISPONIVEL'),
+(2,20,'DISPONIVEL'),
+(2,19,'DISPONIVEL'),
+(3,11,'DISPONIVEL'),
+(3,15,'DISPONIVEL'),
+(3,7,'DISPONIVEL'),
+(3,18,'INDISPONIVEL');
+
+select * from tbProdutoPorProdutor
+
+-- Criar View para tbProdutoPorProdutor
+CREATE VIEW vProdutoPorProdutor 
+AS 
+SELECT a.idProdutoPorProdutor, a.idProdutor, b.nomeUserProdutor, b.nomeProdutor, a.idProduto, c.nomeProduto, c.tipo_de_produto, a.disponibilidade 
+FROM tbProdutoPorProdutor a, tbProdutor as b, tbProduto as c
+WHERE a.idProduto = c.idProduto and a.idProdutor = b.idProdutor;
+
+-- Criar View materializada para tbProdutoPorProdutor
+CREATE MATERIALIZED VIEW vProdutoPorProdutor 
+AS 
+SELECT a.idProdutoPorProdutor, a.idProdutor, b.nomeUserProdutor, b.nomeProdutor, a.idProduto, c.nomeProduto, c.tipo_de_produto, a.disponibilidade 
+FROM tbProdutoPorProdutor a, tbProdutor as b, tbProduto as c
+WHERE a.idProduto = c.idProduto and a.idProdutor = b.idProdutor;
+
+REFRESH MATERIALIZED VIEW CONCURRENTLY vProdutoPorProdutor;
+
+
+CREATE UNIQUE INDEX IDX_idProdutoPorProdutor ON vProdutoPorProdutor (idProdutoPorProdutor);
+ALTER VIEW vProdutoPorProdutor CLUSTER ON IDX_idProdutoPorProdutor;
+
+
+select * from vProdutoPorProdutor;
+
+CREATE VIEW vProdutor 
+AS
+select idProdutor, nomeUserProdutor, nomeProdutor, tipoDeProdutor, enderecoDoProdutor, lat, lng, telefone, SituacaoProdutor,
+ST_SetSRID(ST_Point(lng, lat),4326) as "geom"
+from tbProdutor;
+
+select * from vProdutor;
+
+CREATE TABLE tb_visualizacao(
+	idVisualizador serial primary key NOT NULL, -- Int32
+	idCliente INT NOT NULL, -- Int32
+	nomeUser varchar(20) NOT NULL, -- string
+	nomeCliente varchar(80) NOT NULL, -- string
+	emailCliente varchar(40) NOT NULL, -- string
+	telefoneCliente varchar(16) NOT NULL, -- string  (12) 99999-9999
+	idProdutor INT NOT NULL,
+	data_visualizacao TIMESTAMP NOT NULL -- DateTime / Hora do servidor
+);
+
+select * from tb_visualizacao  group by idCliente, nomeUser, nomeCliente, telefoneCliente;
+select idCliente, nomeUser from tb_visualizacao WHERE data_visualizacao::date >= CURRENT_DATE group by idCliente, nomeUser
+select idCliente, nomeUser, emailCliente from tb_visualizacao WHERE idProdutor = 1 AND data_visualizacao::date >= CURRENT_DATE group by idCliente, nomeUser, emailCliente
+-- Dropar as tabelas e view
+DROP MATERIALIZED VIEW vProdutoPorProdutor;
+DROP VIEW vProdutoPorProdutor;
+DROP VIEW vProdutor;
+DROP TABLE tbProdutoPorProdutor;
+DROP TABLE tbProdutor;
+DROP TABLE tbProduto;
+DROP TABLE tbCliente;
+DROP TABLE tb_visualizacao;

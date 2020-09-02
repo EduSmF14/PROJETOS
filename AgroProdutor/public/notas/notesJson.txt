@@ -1,0 +1,72 @@
+localhost:3000/register/produtor
+{
+    "user_name": "Test",
+    "name": "Test User 1",
+    "email": "eduardosmf_1998@hotmail.com",
+    "dataNascimento": "14/05/1982",
+    "tipoDeProdutor": "Produtor Orgânico",
+    "senha": "123",
+    "address": "Rua A 1, Jacareí, SP",
+    "lat": -23.282140,
+    "lgn": -45.964709,
+    "telefone": "(12) 99619-0998",
+    "status": "A"
+}
+
+localhost:3000/register/cliente
+{
+    "user_name": "Test",
+    "name": "Test User 1",
+    "email": "eduardosmf_1998@hotmail.com",
+    "dataNascimento": "14/05/1982",
+    "senha": "123",
+    "address": "Rua A 1, Jacareí, SP",
+    "lat": -23.282140,
+    "lgn": -45.964709,
+    "telefone": "(12) 99619-0998"
+}
+
+localhost:3000/data/produtor/produtos
+{
+    "produtos": [
+    	[1,2,"DISPONIVEL"],
+    	[1,4,"DISPONIVEL"],
+    	[1,5,"DISPONIVEL"],
+    	[1,15,"DISPONIVEL"]
+    ]
+}
+
+localhost:3000/login/cliente
+{
+	"name": "Test",
+	"password": "123"
+}
+
+localhost:3000/data/recover/indisponivel/produtos/produtor/:id
+localhost:3000/data/recover/disponivel/produtos/produtor/:id
+
+localhost:3000/data/cliente
+{
+    "user_name": "Test",
+    "name": "Test User 1",
+    "email": "eduardosmf_1998@hotmail.com",
+    "dataNascimento": "14/05/1983",
+    "address": "Rua B 1, Jacareí, SP",
+    "lat": -23.282140,
+    "lgn": -45.964809,
+    "telefone": "(12) 99619-0998",
+    "id": 1
+}
+localhost:3000/data/produtor
+{
+    "user_name": "Test",
+    "name": "Test User 1",
+    "email": "eduardosmf_1998@hotmail.com",
+    "dataNascimento": "14/05/1983",
+    "tipoDeProdutor": "Produtor Agroecológico",
+    "address": "Rua B 1, Jacareí, SP",
+    "lat": -23.282140,
+    "lgn": -45.964809,
+    "telefone": "(12) 99619-0998",
+    "id": 1
+}

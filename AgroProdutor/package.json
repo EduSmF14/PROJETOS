@@ -1,0 +1,29 @@
+{
+  "name": "tgagroprodutor_npm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "express-load": "^1.1.16",
+    "jsonwebtoken": "^8.5.1",
+    "nodemailer": "^6.1.0",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "pg": "^7.9.0",
+    "pg-format": "^1.0.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "tgagroprodutor",
+    "npm"
+  ],
+  "author": "Eduardo <eduardosmf_1998@hotmail.com>",
+  "license": "ISC"
+}

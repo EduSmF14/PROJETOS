@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- TITLE -->
+    <title>MENU</title>
+    <!-- ENCODING -->
+    <meta charset="utf-8" />
+    <!-- DOCUMENT AREA -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- DESCRIPTION -->
+    <meta name="description" content="Aplicação para conectar os produtores de produtos Orgânicos e os clientes">
+    <!-- KEYWORDS -->
+    <meta name="keywords" content="AgroProdutor, Produtores, Clientes, Produtos Orgânicos">
+    <!-- DEFAULT DOCUMENT -->
+    <meta name="robots" content="index, follow">
+    <!-- AUTHOR -->
+    <meta name="author" content="Eduardo Santos">
+    <!-- STYLES APP -->
+    <!-- ROBOTO FONT -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <!-- Material Design icon font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- Material Design Lite -->
+    <link rel="stylesheet" type="text/css" media="screen" href="mdl/material.min.css">
+    <!-- STYLE GENERALIZED -->
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/app.css">
+    <!-- FAVICON -->
+    <link rel="apple-touch-icon" sizes="57x57" href="fav/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="fav/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="fav/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="fav/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="fav/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="fav/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="fav/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="fav/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="fav/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="fav/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="fav/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="fav/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#4caf50">
+    <meta name="msapplication-TileImage" content="fav/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <!-- MANIFEST -->
+    <link rel="manifest" href="manifest.json">
+</head>
+
+<body>
+
+    <!-- Simple header with fixed tabs. -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-tabs">
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+                <!-- RETURN BUTTON => btn_voltar_2 -->
+                <button id="btn_1" class="mdl-button mdl-js-button mdl-button--icon buttons_layout">
+                    <i class="material-icons md-light" id="btn_voltar_1">arrow_back</i>
+                </button>
+                <!-- RETURN BUTTON => btn_voltar_2 -->
+                <button id="btn_2" class="mdl-button mdl-js-button mdl-button--icon buttons_layout">
+                    <i class="material-icons md-light" id="btn_voltar_2">arrow_back</i>
+                </button>
+                <!-- RETURN BUTTON => btn_voltar_3 -->
+                <button id="btn_3" class="mdl-button mdl-js-button mdl-button--icon buttons_layout">
+                    <i class="material-icons md-light" id="btn_voltar_3">arrow_back</i>
+                </button>
+                <!-- TITLE -->
+                <span class="mdl-layout__title">AgroProdutor</span>
+                <div class="mdl-layout-spacer"></div>
+                <!-- HELP BUTTON => app_help -->
+                <button class="mdl-button mdl-js-button mdl-button--icon">
+                    <i class="material-icons md-light" id="app_help">help</i>
+                </button>
+            </div>
+        </header>
+        <!-- MENU -->
+        <div class="demo-drawer mdl-layout__drawer mdl-color--primary mdl-color-text--white">
+            <header class="demo-drawer-header">
+                <img src="images/account.png" class="demo-avatar">
+                <div class="demo-avatar-dropdown">
+                    <span id="user_name"></span>
+                </div>
+            </header>
+            <!-- ITEMS -->
+            <nav class="demo-navigation mdl-navigation mdl-color--white">
+                <p class="mdl-navigation__link">
+                    <i class="mdl-color-text--green-400 material-icons" role="presentation">assignment_ind</i>Perfil</p>
+                <p class="mdl-navigation__link">
+                    <i class="mdl-color-text--green-400 material-icons" role="presentation">description</i>Créditos</p>
+                <p class="mdl-navigation__link">
+                    <i class="mdl-color-text--green-400 material-icons" role="presentation">exit_to_app</i>Sair</p>
+            </nav>
+        </div>
+        <main class="mdl-layout__content">
+            <section class="mdl-layout__tab-panel is-active" id="fixed-tab-1">
+                <div class="page-content">
+                    <!-- REGISTER PRODUCT CARD -->
+                    <div id="app_content" class="demo-card-square mdl-card mdl-shadow--2dp">
+                        <div class="mdl-card__title mdl-card--expand mdl-card_menu_1">
+                            <h2 class="mdl-card__title-text">Editar Produtos</h2>
+                        </div>
+                        <div class="mdl-card__supporting-text">
+                            Edite a disponibilidade de seus produtos.
+                        </div>
+                        <div class="mdl-card__actions mdl-card--border">
+                            <a id="btn_editar" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                                EDITAR
+                            </a>
+                        </div>
+                    </div>
+                    <!-- ACCOUNT MANAGEMENT CARD -->
+                    <div id="app_content" class="demo-card-square mdl-card mdl-shadow--2dp">
+                        <div class="mdl-card__title mdl-card--expand mdl-card_menu_2">
+                            <h2 class="mdl-card__title-text ">Gerenciamento</h2>
+                        </div>
+                        <div class="mdl-card__supporting-text">
+                            Veja quantas pessoas visualizaram seu perfil hoje.
+                        </div>
+                        <div class="mdl-card__actions mdl-card--border">
+                            <a id="btn_gerenciar" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                                VISUALIZAR
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="mdl-layout__tab-panel" id="fixed-tab-2">
+                <div class="page-content">
+                    <div id="list_content" class="app-card-wide mdl-card mdl-shadow--4dp" style="margin: 5%; width: 90%;">
+                        <div class="mdl-card__actions" style="width: 100%; display: flex; flex-direction: column;">
+                            <!-- PRODUCTS LIST TEXT -->
+                            <div class="mdl-card__supporting-text" style="width: 70%; align-self: center; padding: 16px 0 0 0; text-align: justify;">
+                                Lista dos seus Produtos Disponível e Indisponível:
+                            </div>
+                            <ul class="pruducts_list mdl-list">
+                            </ul>
+                        </div>
+                    </div>
+                    <button id="add_pruduct" class="mdl-button mdl-js-button mdl-button--fab mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
+                        <i class="material-icons md-light">add</i>
+                    </button>
+                </div>
+            </section>
+            <section class="mdl-layout__tab-panel" id="fixed-tab-3">
+                <div class="page-content">
+                    <div id="list_content" class="app-card-wide mdl-card mdl-shadow--4dp" style="margin: 5%; width: 90%;">
+                        <div class="mdl-card__actions" style="width: 100%; display: flex; flex-direction: column;">
+                            <!-- PRODUCTS LIST TEXT -->
+                            <div class="mdl-card__supporting-text" style="width: 70%; align-self: center; padding: 16px 0 0 0; text-align: justify;">
+                                Lista de pessoas que visualizaram seu perfil hoje:
+                            </div>
+                            <ul class="cliente_list mdl-list">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="mdl-layout__tab-panel" id="fixed-tab-4">
+                <div class="page-content">
+                    <div class="app-card-wide mdl-card mdl-shadow--4dp">
+                        <!-- REGISTER TITLE -->
+                        <div class="mdl-card__title">
+                            <h2 class="mdl-card__title-text mdl-h2__title">Selecione seus Produtos</h2>
+                        </div>
+                        <!-- REGISTER ACTIONS -->
+                        <div class="mdl-card__actions mdl-div_card flex_box_2 section_unfixed">
+                            <div id="frutas" class="flex_box_2">
+                                <h2 class="flex_box_2 mdl-color-text--green-500">FRUTAS</h2>
+                                <i id="frutas_itens_img" class="mdl-color-text--green-400 material-icons md-30" role="presentation">expand_more</i>
+                                <ul id="frutas_itens" class="demo-list-control mdl-list ul_card">
+                                    <li id="1" class="flex_box_2 mdl-list__item">
+                                        <span class="mdl-list__item-primary-content">
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Abacate">
+                                                <input type="checkbox" id="Abacate" name="checkbox_frutas" class="mdl-checkbox__input" />
+                                            </label>
+                                            <span class="mdl-checkbox__label">Abacate</span>
+                                        </span>
+                                    </li>
+                                    <li id="2" class="flex_box_2 mdl-list__item">
+                                        <span class="mdl-list__item-primary-content">
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Abacaxi">
+                                                <input type="checkbox" id="Abacaxi" name="checkbox_frutas" class="mdl-checkbox__input" />
+                                            </label>
+                                            <span class="mdl-checkbox__label">Abacaxi</span>
+                                        </span>
+                                    </li>
+                                    <li id="3" class="flex_box_2 mdl-list__item">
+                                        <span class="mdl-list__item-primary-content">
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Acai">
+                                                <input type="checkbox" id="Acai" name="checkbox_frutas" class="mdl-checkbox__input" />
+                                            </label>
+                                            <span class="mdl-checkbox__label">Açaí</span>
+                                        </span>
+                                    </li>
+                                    <li id="4" class="flex_box_2 mdl-list__item">
+                                        <span class="mdl-list__item-primary-content">
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Ameixa">
+                                                <input type="checkbox" id="Ameixa" name="checkbox_frutas" class="mdl-checkbox__input" />
+                                            </label>
+                                            <span class="mdl-checkbox__label">Ameixa</span>
+                                        </span>
+                                    </li>
+                                    <li id="5" class="flex_box_2 mdl-list__item">
+                                        <span class="mdl-list__item-primary-content">
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Banana">
+                                                <input type="checkbox" id="Banana" name="checkbox_frutas" class="mdl-checkbox__input" />
+                                            </label>
+                                            <span class="mdl-checkbox__label">Banana</span>
+                                        </span>
+                                    </li>
+                                    <li id="6" class="flex_box_2 mdl-list__item">
+                                        <span class="mdl-list__item-primary-content">
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Blueberries">
+                                                <input type="checkbox" id="Blueberries" name="checkbox_frutas" class="mdl-checkbox__input" />
+                                            </label>
+                                            <span class="mdl-checkbox__label">Blueberries</span>
+                                        </span>
+                                    </li>
+                                    <li id="7" class="flex_box_2 mdl-list__item">
+                                        <span class="mdl-list__item-primary-content">
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Caju">
+                                                <input type="checkbox" id="Caju" name="checkbox_frutas" class="mdl-checkbox__input" />
+                                            </label>
+                                            <span class="mdl-checkbox__label">Caju</span>
+                                        </span>
+                                    </li>
+                                    <li id="8" class="flex_box_2 mdl-list__item">
+                                        <span class="mdl-list__item-primary-content">
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Cereja">
+                                                <input type="checkbox" id="Cereja" name="checkbox_frutas" class="mdl-checkbox__input" />
+                                            </label>
+                                            <span class="mdl-checkbox__label">Cereja</span>
+                                        </span>
+                                    </li>
+                                    <li id="9" class="flex_box_2 mdl-list__item">
+                                        <span class="mdl-list__item-primary-content">
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Figo">
+                                                <input type="checkbox" id="Figo" name="checkbox_frutas" class="mdl-checkbox__input" />
+                                            </label>
+                                            <span class="mdl-checkbox__label">Figo</span>
+                                        </span>
+                                    </li>
+                                    <li id="10" class="flex_box_2 mdl-list__item">
+                                        <span class="mdl-list__item-primary-content">
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Framboesa">
+                                                <input type="checkbox" id="Framboesa" name="checkbox_frutas" class="mdl-checkbox__input" />
+                                            </label>
+                                            <span class="mdl-checkbox__label">Framboesa</span>
+                                        </span>
+                                    </li>
+                                    <li id="11" class="flex_box_2 mdl-list__item">
+                                        <span class="mdl-list__item-primary-content">
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Goiaba">
+                                                <input type="checkbox" id="Goiaba" name="checkbox_frutas" class="mdl-checkbox__input" />
+                                            </label>
+                                            <span class="mdl-checkbox__label">Goiaba</span>
+                                        </span>
+                                    </li>
+                                    <li id="12" class="flex_box_2 mdl-list__item">
+                                        <span class="mdl-list__item-primary-content">
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Laranja">
+                                                <input type="checkbox" id="Laranja" name="checkbox_frutas" class="mdl-checkbox__input" />
+                                            </label>
+                                            <span class="mdl-checkbox__label">Laranja</span>
+                                        </span>
+                                    </li>
+                                    <li id="13" class="flex_box_2 mdl-list__item">
+                                        <span class="mdl-list__item-primary-content">
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Limao">
+                                                <input type="checkbox" id="Limao" name="checkbox_frutas" class="mdl-checkbox__input" />
+                                            </label>
+                                            <span class="mdl-checkbox__label">Limão</span>
+                                        </span>
+                                    </li>
+                                    <li id="14" class="flex_box_2 mdl-list__item">
+                                        <span class="mdl-list__item-primary-content">
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Maca">
+                                                <input type="checkbox" id="Maca" name="checkbox_frutas" class="mdl-checkbox__input" />
+                                            </label>
+                                            <span class="mdl-checkbox__label">Maçã</span>
+                                        </span>
+                                    </li>
+                                    <li id="15" class="flex_box_2 mdl-list__item">
+                                        <span class="mdl-list__item-primary-content">
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Mamao">
+                                                <input type="checkbox" id="Mamao" name="checkbox_frutas" class="mdl-checkbox__input" />
+                                            </label>
+                                            <span class="mdl-checkbox__label">Mamão</span>
+                                        </span>
+                                    </li>
+                                    <li id="16" class="flex_box_2 mdl-list__item">
+                                        <span class="mdl-list__item-primary-content">
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Manga">
+                                                <input type="checkbox" id="Manga" name="checkbox_frutas" class="mdl-checkbox__input" />
+                                            </label>
+                                            <span class="mdl-checkbox__label">Manga</span>
+                                        </span>
+                                    </li>
+                                    <li id="17" class="flex_box_2 mdl-list__item">
+                                        <span class="mdl-list__item-primary-content">
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Maracuja">
+                                                <input type="checkbox" id="Maracuja" name="checkbox_frutas" class="mdl-checkbox__input" />
+                                            </label>
+                                            <span class="mdl-checkbox__label">Maracujá</span>
+                                        </span>
+                                    </li>
+                                    <li id="18" class="flex_box_2 mdl-list__item">
+                                        <span class="mdl-list__item-primary-content">
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Morango">
+                                                <input type="checkbox" id="Morango" name="checkbox_frutas" class="mdl-checkbox__input" />
+                                            </label>
+                                            <span class="mdl-checkbox__label">Morango</span>
+                                        </span>
+                                    </li>
+                                    <li id="19" class="flex_box_2 mdl-list__item">
+                                        <span class="mdl-list__item-primary-content">
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Nectarina">
+                                                <input type="checkbox" id="Nectarina" name="checkbox_frutas" class="mdl-checkbox__input" />
+                                            </label>
+                                            <span class="mdl-checkbox__label">Nectarina</span>
+                                        </span>
+                                    </li>
+                                    <li id="20" class="flex_box_2 mdl-list__item">
+                                        <span class="mdl-list__item-primary-content">
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Pera">
+                                                <input type="checkbox" id="Pera" name="checkbox_frutas" class="mdl-checkbox__input" />
+                                            </label>
+                                            <span class="mdl-checkbox__label">Pêra</span>
+                                        </span>
+                                    </li>
+                                    <li id="21" class="flex_box_2 mdl-list__item">
+                                        <span class="mdl-list__item-primary-content">
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Pessego">
+                                                <input type="checkbox" id="Pessego" name="checkbox_frutas" class="mdl-checkbox__input" />
+                                            </label>
+                                            <span class="mdl-checkbox__label">Pêssego</span>
+                                        </span>
+                                    </li>
+                                    <li id="22" class="flex_box_2 mdl-list__item">
+                                        <span class="mdl-list__item-primary-content">
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Tangerina">
+                                                <input type="checkbox" id="Tangerina" name="checkbox_frutas" class="mdl-checkbox__input" />
+                                            </label>
+                                            <span class="mdl-checkbox__label">Tangerina</span>
+                                        </span>
+                                    </li>
+                                    <li id="23" class="flex_box_2 mdl-list__item">
+                                        <span class="mdl-list__item-primary-content">
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Uva">
+                                                <input type="checkbox" id="Uva" name="checkbox_frutas" class="mdl-checkbox__input" />
+                                            </label>
+                                            <span class="mdl-checkbox__label">Uva</span>
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div id="legumes" class="flex_box_2">
+                                <h2 class="flex_box_2 mdl-color-text--green-500">LEGUMES</h2>
+                                <i id="legumes_itens_img" class="mdl-color-text--green-400 material-icons md-30" role="presentation">expand_more</i>
+                                <ul id="legumes_itens" class="demo-list-control mdl-list ul_card">
+                                    <li id="24" class="flex_box_2 mdl-list__item">
+                                        <span class="mdl-list__item-primary-content">
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Aipo">
+                                                <input type="checkbox" id="Aipo" name="checkbox_legumes" class="mdl-checkbox__input" />
+                                            </label>
+                                            <span class="mdl-checkbox__label">Aipo</span>
+                                        </span>
+                                    </li>
+                                    <li id="25" class="flex_box_2 mdl-list__item">
+                                        <span class="mdl-list__item-primary-content">
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Batata">
+                                                <input type="checkbox" id="Batata" name="checkbox_legumes" class="mdl-checkbox__input" />
+                                            </label>
+                                            <span class="mdl-checkbox__label">Batata</span>
+                                        </span>
+                                    </li>
+                                    <li id="26" class="flex_box_2 mdl-list__item">
+                                        <span class="mdl-list__item-primary-content">
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Beterraba">
+                                                <input type="checkbox" id="Beterraba" name="checkbox_legumes" class="mdl-checkbox__input" />
+                                            </label>
+                                            <span class="mdl-checkbox__label">Beterraba</span>
+                                        </span>
+                                    </li>
+                                    <li id="27" class="flex_box_2 mdl-list__item">
+                                        <span class="mdl-list__item-primary-content">
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Cenoura">
+                                                <input type="checkbox" id="Cenoura" name="checkbox_legumes" class="mdl-checkbox__input" />
+                                            </label>
+                                            <span class="mdl-checkbox__label">Cenoura</span>
+                                        </span>
+                                    </li>
+                                    <li id="28" class="flex_box_2 mdl-list__item">
+                                        <span class="mdl-list__item-primary-content">
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Chuchu">
+                                                <input type="checkbox" id="Chuchu" name="checkbox_legumes" class="mdl-checkbox__input" />
+                                            </label>
+                                            <span class="mdl-checkbox__label">Chuchu</span>
+                                        </span>
+                                    </li>
+                                    <li id="29" class="flex_box_2 mdl-list__item">
+                                        <span class="mdl-list__item-primary-content">
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Mandioca">
+                                                <input type="checkbox" id="Mandioca" name="checkbox_legumes" class="mdl-checkbox__input" />
+                                            </label>
+                                            <span class="mdl-checkbox__label">Mandioca</span>
+                                        </span>
+                                    </li>
+                                    <li id="30" class="flex_box_2 mdl-list__item">
+                                        <span class="mdl-list__item-primary-content">
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Pepino">
+                                                <input type="checkbox" id="Pepino" name="checkbox_legumes" class="mdl-checkbox__input" />
+                                            </label>
+                                            <span class="mdl-checkbox__label">Pepino</span>
+                                        </span>
+                                    </li>
+                                    <li id="31" class="flex_box_2 mdl-list__item">
+                                        <span class="mdl-list__item-primary-content">
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Pimenta">
+                                                <input type="checkbox" id="Pimenta" name="checkbox_legumes" class="mdl-checkbox__input" />
+                                            </label>
+                                            <span class="mdl-checkbox__label">Pimenta</span>
+                                        </span>
+                                    </li>
+                                    <li id="32" class="flex_box_2 mdl-list__item">
+                                        <span class="mdl-list__item-primary-content">
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Pimentao">
+                                                <input type="checkbox" id="Pimentao" name="checkbox_legumes" class="mdl-checkbox__input" />
+                                            </label>
+                                            <span class="mdl-checkbox__label">Pimentão</span>
+                                        </span>
+                                    </li>
+                                    <li id="33" class="flex_box_2 mdl-list__item">
+                                        <span class="mdl-list__item-primary-content">
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Tomate">
+                                                <input type="checkbox" id="Tomate" name="checkbox_legumes" class="mdl-checkbox__input" />
+                                            </label>
+                                            <span class="mdl-checkbox__label">Tomate</span>
+                                        </span>
+                                    </li>
+                                    <li id="34" class="flex_box_2 mdl-list__item">
+                                        <span class="mdl-list__item-primary-content">
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="TomateCereja">
+                                                <input type="checkbox" id="TomateCereja" name="checkbox_legumes" class="mdl-checkbox__input" />
+                                            </label>
+                                            <span class="mdl-checkbox__label">Tomate Cereja</span>
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div id="verduras" class="flex_box_2">
+                                <h2 class="flex_box_2 mdl-color-text--green-500">VERDURAS</h2>
+                                <i id="verduras_itens_img" class="mdl-color-text--green-400 material-icons md-30" role="presentation">expand_more</i>
+                                <ul id="verduras_itens" class="demo-list-control mdl-list ul_card">
+                                    <li id="35" class="flex_box_2 mdl-list__item">
+                                        <span class="mdl-list__item-primary-content">
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Acelga">
+                                                <input type="checkbox" id="Acelga" name="checkbox_verduras" class="mdl-checkbox__input" />
+                                            </label>
+                                            <span class="mdl-checkbox__label">Acelga</span>
+                                        </span>
+                                    </li>
+                                    <li id="36" class="flex_box_2 mdl-list__item">
+                                        <span class="mdl-list__item-primary-content">
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Agriao">
+                                                <input type="checkbox" id="Agriao" name="checkbox_verduras" class="mdl-checkbox__input" />
+                                            </label>
+                                            <span class="mdl-checkbox__label">Agrião</span>
+                                        </span>
+                                    </li>
+                                    <li id="37" class="flex_box_2 mdl-list__item">
+                                        <span class="mdl-list__item-primary-content">
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Alface">
+                                                <input type="checkbox" id="Alface" name="checkbox_verduras" class="mdl-checkbox__input" />
+                                            </label>
+                                            <span class="mdl-checkbox__label">Alface</span>
+                                        </span>
+                                    </li>
+                                    <li id="38" class="flex_box_2 mdl-list__item">
+                                        <span class="mdl-list__item-primary-content">
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Almeirao">
+                                                <input type="checkbox" id="Almeirao" name="checkbox_verduras" class="mdl-checkbox__input" />
+                                            </label>
+                                            <span class="mdl-checkbox__label">Almeirão</span>
+                                        </span>
+                                    </li>
+                                    <li id="39" class="flex_box_2 mdl-list__item">
+                                        <span class="mdl-list__item-primary-content">
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Brocolis">
+                                                <input type="checkbox" id="Brocolis" name="checkbox_verduras" class="mdl-checkbox__input" />
+                                            </label>
+                                            <span class="mdl-checkbox__label">Brócolis</span>
+                                        </span>
+                                    </li>
+                                    <li id="40" class="flex_box_2 mdl-list__item">
+                                        <span class="mdl-list__item-primary-content">
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Couve">
+                                                <input type="checkbox" id="Couve" name="checkbox_verduras" class="mdl-checkbox__input" />
+                                            </label>
+                                            <span class="mdl-checkbox__label">Couve</span>
+                                        </span>
+                                    </li>
+                                    <li id="41" class="flex_box_2 mdl-list__item">
+                                        <span class="mdl-list__item-primary-content">
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Escarola">
+                                                <input type="checkbox" id="Escarola" name="checkbox_verduras" class="mdl-checkbox__input" />
+                                            </label>
+                                            <span class="mdl-checkbox__label">Escarola</span>
+                                        </span>
+                                    </li>
+                                    <li id="42" class="flex_box_2 mdl-list__item">
+                                        <span class="mdl-list__item-primary-content">
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Espinafre">
+                                                <input type="checkbox" id="Espinafre" name="checkbox_verduras" class="mdl-checkbox__input" />
+                                            </label>
+                                            <span class="mdl-checkbox__label">Espinafre</span>
+                                        </span>
+                                    </li>
+                                    <li id="43" class="flex_box_2 mdl-list__item">
+                                        <span class="mdl-list__item-primary-content">
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Repolho">
+                                                <input type="checkbox" id="Repolho" name="checkbox_verduras" class="mdl-checkbox__input" />
+                                            </label>
+                                            <span class="mdl-checkbox__label">Repolho</span>
+                                        </span>
+                                    </li>
+                                    <li id="44" class="flex_box_2 mdl-list__item">
+                                        <span class="mdl-list__item-primary-content">
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Rucula">
+                                                <input type="checkbox" id="Rucula" name="checkbox_verduras" class="mdl-checkbox__input" />
+                                            </label>
+                                            <span class="mdl-checkbox__label">Rúcula</span>
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div id="ervas" class="flex_box_2">
+                                <h2 class="flex_box_2 mdl-color-text--green-500">ERVAS E TEMPEIROS</h2>
+                                <i id="ervas_itens_img" class="mdl-color-text--green-400 material-icons md-30" role="presentation">expand_more</i>
+                                <ul id="ervas_itens" class="demo-list-control mdl-list ul_card">
+                                    <li id="45" class="flex_box_2 mdl-list__item">
+                                        <span class="mdl-list__item-primary-content">
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Camomila">
+                                                <input type="checkbox" id="Camomila" name="checkbox_ervas" class="mdl-checkbox__input" />
+                                            </label>
+                                            <span class="mdl-checkbox__label">Camomila</span>
+                                        </span>
+                                    </li>
+                                    <li id="46" class="flex_box_2 mdl-list__item">
+                                        <span class="mdl-list__item-primary-content">
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="CapimLimao">
+                                                <input type="checkbox" id="CapimLimao" name="checkbox_ervas" class="mdl-checkbox__input" />
+                                            </label>
+                                            <span class="mdl-checkbox__label">Capim Limão</span>
+                                        </span>
+                                    </li>
+                                    <li id="47" class="flex_box_2 mdl-list__item">
+                                        <span class="mdl-list__item-primary-content">
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="CheiroVerde">
+                                                <input type="checkbox" id="CheiroVerde" name="checkbox_ervas" class="mdl-checkbox__input" />
+                                            </label>
+                                            <span class="mdl-checkbox__label">Cheiro Verde</span>
+                                        </span>
+                                    </li>
+                                    <li id="48" class="flex_box_2 mdl-list__item">
+                                        <span class="mdl-list__item-primary-content">
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Coentro">
+                                                <input type="checkbox" id="Coentro" name="checkbox_ervas" class="mdl-checkbox__input" />
+                                            </label>
+                                            <span class="mdl-checkbox__label">Coentro</span>
+                                        </span>
+                                    </li>
+                                    <li id="49" class="flex_box_2 mdl-list__item">
+                                        <span class="mdl-list__item-primary-content">
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Couve_flor">
+                                                <input type="checkbox" id="Couve_flor" name="checkbox_ervas" class="mdl-checkbox__input" />
+                                            </label>
+                                            <span class="mdl-checkbox__label">Couve-flor</span>
+                                        </span>
+                                    </li>
+                                    <li id="50" class="flex_box_2 mdl-list__item">
+                                        <span class="mdl-list__item-primary-content">
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Erva_doce">
+                                                <input type="checkbox" id="Erva_doce" name="checkbox_ervas" class="mdl-checkbox__input" />
+                                            </label>
+                                            <span class="mdl-checkbox__label">Erva-doce</span>
+                                        </span>
+                                    </li>
+                                    <li id="51" class="flex_box_2 mdl-list__item">
+                                        <span class="mdl-list__item-primary-content">
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Hortela">
+                                                <input type="checkbox" id="Hortela" name="checkbox_ervas" class="mdl-checkbox__input" />
+                                            </label>
+                                            <span class="mdl-checkbox__label">Hortelã</span>
+                                        </span>
+                                    </li>
+                                    <li id="52" class="flex_box_2 mdl-list__item">
+                                        <span class="mdl-list__item-primary-content">
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Manjericao">
+                                                <input type="checkbox" id="Manjericao" name="checkbox_ervas" class="mdl-checkbox__input" />
+                                            </label>
+                                            <span class="mdl-checkbox__label">Manjericão</span>
+                                        </span>
+                                    </li>
+                                    <li id="53" class="flex_box_2 mdl-list__item">
+                                        <span class="mdl-list__item-primary-content">
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Salsa">
+                                                <input type="checkbox" id="Salsa" name="checkbox_ervas" class="mdl-checkbox__input" />
+                                            </label>
+                                            <span class="mdl-checkbox__label">Salsa</span>
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div id="graos" class="flex_box_2">
+                                <h2 class="flex_box_2 mdl-color-text--green-500">GRÃOS</h2>
+                                <i id="graos_itens_img" class="mdl-color-text--green-400 material-icons md-30" role="presentation">expand_more</i>
+                                <ul id="graos_itens" class="demo-list-control mdl-list ul_card">
+                                    <li id="54" class="flex_box_2 mdl-list__item">
+                                        <span class="mdl-list__item-primary-content">
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Arroz">
+                                                <input type="checkbox" id="Arroz" name="checkbox_graos" class="mdl-checkbox__input" />
+                                            </label>
+                                            <span class="mdl-checkbox__label">Arroz</span>
+                                        </span>
+                                    </li>
+                                    <li id="55" class="flex_box_2 mdl-list__item">
+                                        <span class="mdl-list__item-primary-content">
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Ervilha">
+                                                <input type="checkbox" id="Ervilha" name="checkbox_graos" class="mdl-checkbox__input" />
+                                            </label>
+                                            <span class="mdl-checkbox__label">Ervilha</span>
+                                        </span>
+                                    </li>
+                                    <li id="56" class="flex_box_2 mdl-list__item">
+                                        <span class="mdl-list__item-primary-content">
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Feijao">
+                                                <input type="checkbox" id="Feijao" name="checkbox_graos" class="mdl-checkbox__input" />
+                                            </label>
+                                            <span class="mdl-checkbox__label">Feijão</span>
+                                        </span>
+                                    </li>
+                                    <li id="57" class="flex_box_2 mdl-list__item">
+                                        <span class="mdl-list__item-primary-content">
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Milho">
+                                                <input type="checkbox" id="Milho" name="checkbox_graos" class="mdl-checkbox__input" />
+                                            </label>
+                                            <span class="mdl-checkbox__label">Milho</span>
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- REGISTER BUTTON => app_register -->
+                            <button id="btn_cadastrar_produtos" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent app_button">
+                                CONFIRMAR
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- FLOAT BUTTON -->
+    <button id="app_float" class="float_button mdl-button mdl-js-button mdl-button--fab mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
+        <i class="material-icons">keyboard_arrow_down</i>
+    </button>
+
+    <!-- DIV == LOADER -->
+    <div id="loader" class="tools_flex loader_flex">
+        <div id="loader_background" class="tools_flex loader_flex">
+            <div id="loader_animation" class="tools_flex loader_flex">
+                <svg viewBox="0 0 32 32" width="35" height="35">
+                    <circle id="spinner" cx="16" cy="16" r="14" fill="none"></circle>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <!-- SNACKBAR -->
+    <div id="app_snackbar" class="mdl-js-snackbar mdl-snackbar">
+        <div class="mdl-snackbar__text"></div>
+        <button class="mdl-snackbar__action"></button>
+    </div>
+
+    <!-- DIALOG -->
+    <div id="dialog" class="flex_box dialog_background">
+        <div class="flex_box box_shadow">
+            <h1 class="unselected">Title</h1>
+            <div class="flex_box">
+                <p class="unselected">Message</p>
+            </div>
+            <div class="flex_box"></div>
+        </div>
+    </div>
+
+
+    <!-- SCRIPT -->
+    <!-- JQUERY JS -->
+    <script src="jquery/jquery-3.3.1.js"></script>
+    <!-- Material Design Lite -->
+    <script src="mdl/material.js"></script>
+    <!-- FUNÇÕES GERAIS DA TELA -->
+    <script src="js/MenuProdutor.js"></script>
+    <script src="js/App.js"></script>
+
+</body>
+
+</html>
