@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- TITLE -->
+    <title>Documento</title>
+    <!-- ENCODING -->
+    <meta charset="utf-8" />
+    <!-- DOCUMENT AREA -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- DESCRIPTION -->
+    <meta name="description" content="Sem descrição">
+    <!-- KEY WORDS -->
+    <meta name="keywords" content="Sem, keywords">
+    <!-- DEFAULT DOCUMENT -->
+    <meta name="robots" content="index, follow">
+    <!-- AUTHOR -->
+    <meta name="author" content="Sem autor">
+    <!-- FONT -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <!-- STYLE -->
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/style.css" />
+    <!-- ICON -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- MANIFEST -->
+
+</head>
+
+<body>
+    <div class="mdl-layout__container">
+        <div class="mdl-layout">
+            <header id="top_toolbar"></header>
+            <main class="mdl-layout__content">
+                <section class="mdl-layout__tab-panel" id="fixed-tab-1">
+                    <div class="page-content">
+                        <!-- CREAT FORMS CARD -->
+                        <div id="app_content" class="demo-card-square mdl-card mdl-shadow--2dp">
+                            <div class="mdl-card__title mdl-card--expand mdl-card_menu_1">
+                                <h2 class="mdl-card__title-text">Criar Formulário</h2>
+                            </div>
+                            <div class="mdl-card__supporting-text">
+                                Criar formulários.
+                            </div>
+                            <div class="mdl-card__actions mdl-card--border">
+                                <a id="btn_criar" class="mdl-button mdl-button--colored">
+                                    CRIAR
+                                </a>
+                            </div>
+                        </div>
+                        <!-- ANSWER FORMS CARD -->
+                        <div id="app_content" class="demo-card-square mdl-card mdl-shadow--2dp">
+                            <div class="mdl-card__title mdl-card--expand mdl-card_menu_2">
+                                <h2 class="mdl-card__title-text">Responder Formulário</h2>
+                            </div>
+                            <div class="mdl-card__supporting-text">
+                                Responda o formulário disponível.
+                            </div>
+                            <div class="mdl-card__actions mdl-card--border">
+                                <a id="btn_responder" class="mdl-button mdl-button--colored">
+                                    RESPONDER
+                                </a>
+                            </div>
+                        </div>
+                        <!-- FORMS MANAGEMENT CARD -->
+                        <div id="app_content" class="demo-card-square mdl-card mdl-shadow--2dp">
+                            <div class="mdl-card__title mdl-card--expand mdl-card_menu_3">
+                                <h2 class="mdl-card__title-text ">Gerenciamento</h2>
+                            </div>
+                            <div class="mdl-card__supporting-text">
+                                Veja todos os seus formulários respondidos.
+                            </div>
+                            <div class="mdl-card__actions mdl-card--border">
+                                <a id="btn_gerenciar" class="mdl-button mdl-button--colored">
+                                    VISUALIZAR
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="mdl-layout__tab-panel" id="fixed-tab-2">
+                    <div class="page-content">
+                        <div id="list_content" class="app-card-wide mdl-card mdl-shadow--4dp" style="margin: 5%; width: 90%;">
+                            <div class="mdl-card__actions" style="width: 100%; display: flex; flex-direction: column;">
+                                <!-- PRODUCTS LIST TEXT -->
+                                <div class="mdl-card__supporting-text" style="width: 70%; align-self: center; padding: 16px 0 0 0; text-align: justify;">
+                                    Lista de formulários criados:
+                                </div>
+                                <ul class="forms_list mdl-list">
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="mdl-layout__tab-panel" id="fixed-tab-3">
+                    <div class="page-content">
+                        <div id="list_content" class="app-card-wide mdl-card mdl-shadow--4dp" style="margin: 5%; width: 90%;">
+                            <!-- REGISTER TITLE -->
+                            <div class="mdl-card__title">
+                                <h2 class="mdl-card__title-text mdl-h2__title">Configure seu formulário</h2>
+                            </div>
+                            <div class="mdl-card__actions" style="width: 100%; display: flex; flex-direction: column;">
+                                <!-- FORMS LIST TEXT -->
+                                <div class="mdl-card__supporting-text" style="width: 100%; text-align: justify;">
+                                    Escreva quais perguntas você quer que contenha na sua pesquisa nos campos vagos:
+                                </div>
+                                <!-- REGISTER ACTIONS -->
+                                <div class="mdl-card__actions mdl-div_card flex_box_2 section_unfixed">
+                                    <div class="flex_box">
+                                        <h3 id="titulo" class="unselected">Qual é o título da pesquisa?</h3>
+                                        <i class="mdl-card__supporting-text unselected">
+                                            Essa pergunta é para anexar um título no topo do formulário, é um campo
+                                            obrigatório!
+                                        </i>
+                                        <input id="pesq_titulo" class="required" type="text" class="margin_top" maxlength="200" autocomplete="on">
+                                    </div>
+                                    <div class="flex_box">
+                                        <h3 id="pergunta_1" class="unselected">1- Qual é o nome do pesquisador?</h3>
+                                        <i class="mdl-card__supporting-text unselected">
+                                            Essa é uma pergunta fixa!
+                                        </i>
+                                    </div>
+                                    <div class="flex_box">
+                                        <h3 id="pergunta_2" class="unselected">2- Qual é a Data da Pesquisa?</h3>
+                                        <i class="mdl-card__supporting-text unselected">
+                                            Essa é uma pergunta fixa será respondida pelo sistema!
+                                        </i>
+                                    </div>
+                                    <div class="flex_box">
+                                        <h3 id="pergunta_3" class="unselected">3- Qual é sua coordenada atual?</h3>
+                                        <i class="mdl-card__supporting-text unselected">
+                                            Essa é uma pergunta fixa será respondida pelo sistema!
+                                        </i>
+                                    </div>
+                                    <div class="flex_box">
+                                        <h3 class="unselected">4- Digite sua pergunta aqui.</h3>
+                                        <input id="pergunta_4" placeholder="Campo Opicional" class="required" type="text" class="margin_top" maxlength="200" autocomplete="on">
+                                    </div>
+                                    <div class="flex_box">
+                                        <h3 class="unselected">5- Digite sua pergunta aqui.</h3>
+                                        <input id="pergunta_5" placeholder="Campo Opicional" class="required" type="text" class="margin_top" maxlength="200" autocomplete="on">
+                                    </div>
+                                    <div class="flex_box">
+                                        <h3 class="unselected">6- Digite sua pergunta aqui.</h3>
+                                        <input id="pergunta_6" placeholder="Campo Opicional" class="required" type="text" class="margin_top" maxlength="200" autocomplete="on">
+                                    </div>
+                                    <div class="flex_box">
+                                        <h3 class="unselected">7- Digite sua pergunta aqui.</h3>
+                                        <input id="pergunta_7" placeholder="Campo Opicional" class="required" type="text" class="margin_top" maxlength="200" autocomplete="on">
+                                    </div>
+                                    <!-- REGISTER BUTTON => app_register -->
+                                    <button id="btn_confirmar" class="mdl-button  mdl-button--raised mdl-button--accent app_button">
+                                        CONFIRMAR
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="mdl-layout__tab-panel" id="fixed-tab-4">
+                    <div class="page-content">
+                        <div id="list_content" class="app-card-wide mdl-card mdl-shadow--4dp" style="margin: 5%; width: 90%;">
+                            <div class="mdl-card__actions" style="width: 100%; display: flex; flex-direction: column;">
+                                <!-- PRODUCTS LIST TEXT -->
+                                <div class="mdl-card__supporting-text" style="width: 70%; align-self: center; padding: 16px 0 0 0; text-align: justify;">
+                                    Lista de formulários respondidos:
+                                </div>
+                                <ul class="forms_list_2 mdl-list">
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="mdl-layout__tab-panel" id="fixed-tab-5">
+                    <div class="page-content">
+                        <div id="list_content" class="app-card-wide mdl-card mdl-shadow--4dp" style="margin: 5%; width: 90%;">
+                            <!-- REGISTER TITLE -->
+                            <div class="mdl-card__title">
+                                <h2 class="mdl-card__title-text mdl-h2__title">Responda seu formulário</h2>
+                            </div>
+                            <div class="mdl-card__actions" style="width: 100%; display: flex; flex-direction: column;">
+                                <!-- FORMS LIST TEXT -->
+                                <div class="mdl-card__supporting-text" style="width: 100%; text-align: justify;">
+                                    Responda todas as perguntas do questionário abaixo:
+                                </div>
+                                <!-- REGISTER ACTIONS -->
+                                <div class="mdl-card__actions mdl-div_card flex_box_2 section_unfixed">
+                                    <div class="flex_box">
+                                        <h3 id="titulo_resp" class="unselected"></h3>
+                                    </div>
+                                    <div class="flex_box">
+                                        <h3 class="unselected">Qual é o nome do pesquisador?</h3>
+                                        <input id="res_1" placeholder="Campo obrigatório" class="required" type="text" class="margin_top" maxlength="200" autocomplete="on">
+                                    </div>
+                                    <div class="flex_box">
+                                        <h3 class="unselected">Qual é a Data da Pesquisa?</h3>
+                                        <input id="res_2" placeholder="Campo obrigatório" class="required" type="text" class="margin_top" maxlength="200" autocomplete="on">
+                                    </div>
+                                    <div class="flex_box">
+                                        <h3 id="pergunta_3" class="unselected">Qual é sua coordenada atual?</h3>
+                                        <input id="res_3" placeholder="Campo Opicional" class="required" type="text" class="margin_top" maxlength="200" autocomplete="on">
+                                    </div>
+                                    <div id="per_1" class="flex_box">
+                                        <h3 id="form_1" class="unselected"></h3>
+                                        <input id="res_4" placeholder="Campo Opicional" class="required" type="text" class="margin_top" maxlength="200" autocomplete="on">
+                                    </div>
+                                    <div id="per_2" class="flex_box">
+                                        <h3 id="form_2" class="unselected"></h3>
+                                        <input id="res_5" placeholder="Campo Opicional" class="required" type="text" class="margin_top" maxlength="200" autocomplete="on">
+                                    </div>
+                                    <div id="per_3" class="flex_box">
+                                        <h3 id="form_3" class="unselected"></h3>
+                                        <input id="res_6" placeholder="Campo Opicional" class="required" type="text" class="margin_top" maxlength="200" autocomplete="on">
+                                    </div>
+                                    <div id="per_4" class="flex_box">
+                                        <h3 id="form_4" class="unselected"></h3>
+                                        <input id="res_7" placeholder="Campo Opicional" class="required" type="text" class="margin_top" maxlength="200" autocomplete="on">
+                                    </div>
+                                    <!-- REGISTER BUTTON => app_register -->
+                                    <button id="btn_respostas" class="mdl-button  mdl-button--raised mdl-button--accent app_button">
+                                        CONFIRMAR
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="mdl-layout__tab-panel" id="fixed-tab-6">
+                    <div class="page-content">
+                        <!-- REGISTER CARD -->
+                        <div class="app-card-wide mdl-card mdl-shadow--4dp">
+                            <!-- REGISTER TITLE -->
+                            <div class="mdl-card__title">
+                                <h2 class="mdl-card__title-text mdl-h2__title">LIsta de Respstas</h2>
+                            </div>
+                            <!-- REGISTER ACTIONS -->
+                            <div class="mdl-card__actions mdl-div_card">
+                                <div id="respostas_description" class="mdl-card__supporting-text">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <!-- FLOAT BUTTON -->
+    <button id="app_float" class="float_button mdl-button mdl-button--fab mdl-button--raised  mdl-button--colored">
+        <i class="material-icons">keyboard_arrow_down</i>
+    </button>
+
+    <!-- DIV == LOADER -->
+    <div id="loader" class="tools_flex loader_flex">
+        <div id="loader_background" class="tools_flex loader_flex">
+            <div id="loader_animation" class="tools_flex loader_flex">
+                <svg viewBox="0 0 32 32" width="35" height="35">
+                    <circle id="spinner" cx="16" cy="16" r="14" fill="none"></circle>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <!-- DIALOG -->
+    <div id="dialog" class="flex_box dialog_background">
+        <div class="flex_box box_shadow">
+            <h1 class="unselected">Title</h1>
+            <div class="flex_box">
+                <p class="unselected">Message</p>
+            </div>
+            <div class="flex_box"></div>
+        </div>
+    </div>
+
+    <!-- SCRIPT -->
+    <script src="jquery/jquery-3.3.1.js"></script>
+    <script src="js/Toolbar.js"></script>
+    <script src="js/Menu.js"></script>
+    <script src="js/App.js"></script>
+
+</body>
+
+</html>
